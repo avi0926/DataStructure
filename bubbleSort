@@ -23,7 +23,9 @@ void bubbleSort(int *Arr,int n){
 int main(){
     int Arr[]={11,17,9,5,30,28};
     int size=sizeof(Arr)/sizeof(int);
+    printf("Before Sorting the array are:");
     printArray(Arr,size);
     bubbleSort(Arr,size);
+    printf("After Sorting the array are:");
     printArray(Arr,size);
 }
