@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void printArray(int *A,int n){
+    for(int i=0;i<n;i++){
+        printf("%d ",A[i]);
+    }
+    printf("\n");
+}
+
+void selectionSort(int *A,int n){
+    for(int i=0;i<n-1;i++){
+        int indexofmin = i;
+        for(int j=i+1;j<n;j++){
+            if(A[indexofmin]>A[j]){
+            indexofmin = j;
+            }
+        }
+        int temp=A[i];
+        A[i]=A[indexofmin];
+        A[indexofmin]=temp;
+    }
+}
+
+int main(){
+    int Arr[]={11,17,9,5,30,28};
+    int size=sizeof(Arr)/sizeof(int);
+    printf("Before Sorting the array are:");
+    printArray(Arr,size); 
+    selectionSort(Arr,size);
+    printf("After Sorting the array are:");
+    printArray(Arr,size);
+    
+    return 0;
+}
