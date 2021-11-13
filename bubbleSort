@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void printArray(int *A,int n){
+    for(int i=0;i<n;i++){
+        printf("%d ",A[i]);
+    }
+    printf("\n");
+}
+
+void bubbleSort(int *Arr,int n){
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n-i;j++){
+            if(Arr[j]>Arr[j+1]){
+                int temp=Arr[j+1];
+                Arr[j+1]=Arr[j];
+                Arr[j]=temp;
+            }
+        }
+    }
+}
+
+int main(){
+    int Arr[]={11,17,9,5,30,28};
+    int size=sizeof(Arr)/sizeof(int);
+    printArray(Arr,size);
+    bubbleSort(Arr,size);
+    printArray(Arr,size);
+}
